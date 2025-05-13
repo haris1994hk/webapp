@@ -1,0 +1,166 @@
+/* style.css */
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDI2fHxjbG91ZHxlbnwwfHx8fDE2MzU5NTUwNzY&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Add a subtle animated overlay to enhance the background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Container Styling */
+.container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 350px;
+    text-align: center;
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+input[type="text"] {
+    width: 75%;
+    padding: 12px 20px;
+    margin-right: 10px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #ff7675;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e66767;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Weather Result Styling */
+#weatherResult {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+#cityName {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+/* Add a smooth fade-in effect for the weather result */
+#weatherResult.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#hourlyWeather, #dailyWeather, #yesterdayWeather {
+    margin-top: 20px;
+}
+
+#hourlyWeather div, #dailyWeather div {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
